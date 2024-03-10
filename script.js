@@ -65,10 +65,30 @@ btnHold.addEventListener('click', function() {
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
+      diceEl.classList.add('hidden');
     } else {
       switchPlayer();
     }
   }
 });
 
-// dice-5.png
+btnNew.addEventListener('click', function() {
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.remove('player--winner');
+
+  scores[0] = 0;
+  scores[1] = 0;
+  currentScore = 0;
+  console.log(scores);
+  console.log(currentScore);
+
+  playing = true;
+
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+});
